@@ -1,0 +1,213 @@
+program 1 :
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GenericCollections
+{
+    class Main
+    {
+        public void printarray(int[] integeraaray)
+        {
+            foreach (var item in integeraaray)
+            {
+                Console.Write("{0} ",item);
+            }
+        }
+        public void printarray(string[] stringarray)
+        {
+            foreach (var item in stringarray)
+            {
+                Console.Write("{0} ", item);
+            }
+        }
+        public void Display()
+        {
+
+        }
+    }
+    class Program
+    {       
+       static void Main(string[] args)
+        {
+            int[] integerarray = new int[5];
+            int[] integerarray1 = new int[5];
+            string[] stringarray = new string[5];
+            string[] stringarray1 = new string[5];
+            Console.WriteLine("Enter the 5 array elements");
+            for (int i = 0; i < integerarray.Length; i++)
+            {
+                integerarray[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Enter the 5 String elements");
+            for (int i = 0; i < stringarray.Length; i++)
+            {
+               stringarray[i] = Console.ReadLine();
+            }
+            Main m1 = new Main();
+            Console.WriteLine("Array List are : ");
+            m1.printarray(integerarray);
+            Console.WriteLine();
+
+            Console.WriteLine("\nString elements are :");
+            m1.printarray(stringarray);
+            Console.WriteLine();
+
+            //Reversing an Array
+            Array.Reverse(integerarray);
+            Console.WriteLine("\nAfter Reversing the Array :");
+            m1.printarray(integerarray);
+            Console.WriteLine();
+
+            //Sorting a Array
+            Array.Sort(integerarray);
+            Console.WriteLine("\nAfter Sorting the Array :");
+            m1.printarray(integerarray);
+            Console.WriteLine();
+
+            //Clear the array elements
+            Array.Clear(integerarray,1,2);
+            Console.WriteLine("\nAfter Clearing the Array :");
+            m1.printarray(integerarray);
+            Console.WriteLine();
+
+            //Copying the array elements
+            Array.Copy(integerarray,integerarray1,5);
+            Console.WriteLine("\nAfter Copying the Array :");
+            m1.printarray(integerarray);
+            Console.WriteLine();
+
+            //Reversing an String
+            Array.Reverse(stringarray);
+            Console.WriteLine("\nAfter Reversing the Array :");
+            m1.printarray(stringarray);
+            Console.WriteLine();
+
+            //Sorting a String
+            Array.Sort(stringarray);
+            Console.WriteLine("\nAfter Sorting the Array :");
+            m1.printarray(stringarray);
+            Console.WriteLine();
+
+            //Clear the String elements
+            Array.Clear(stringarray,1,2);
+            Console.WriteLine("\nAfter Clearing the Array : ");
+            m1.printarray(stringarray);
+            Console.WriteLine();
+
+            //Copying the String elements
+            Array.Copy(stringarray,stringarray1,5);
+            Console.WriteLine("\nAfter Copying the Array :");
+            m1.printarray(stringarray);
+            Console.WriteLine();
+
+
+            Console.ReadKey();
+        }
+    }
+
+    
+}
+
+program 2 : Arraylist Collection
+
+-------------------------------------------------
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GenericCollections
+{
+    class employee
+    {
+        public int EmpId { get; set; }
+        public string EmpName { get; set; }
+        public double EmpSal { get; set; }
+
+    }
+    internal class arrayList
+    {
+        public static void Main(string[] args)
+        {
+            ArrayList a = new ArrayList();
+            employee e1 = new employee();
+            Console.WriteLine("Enter employee Id");
+            e1.EmpId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter employee Name");
+            e1.EmpName = Console.ReadLine();
+            Console.WriteLine("Enter employee salary");
+            e1.EmpSal = Convert.ToInt32(Console.ReadLine());
+            a.Add(e1);
+            foreach (employee e in a)
+            {
+                Console.WriteLine(e.EmpId + " " + e.EmpName + "" + e.EmpSal);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+program 3 : Generic List
+
+-------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GenericCollections
+{
+    class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double salary { get; set; }
+    }
+    internal class genericList
+    {
+        public static void Main(string[] args)
+        {
+            List<Employee> empList = new List<Employee>();
+            Employee emp1 = new Employee()
+            {
+                Id = 1,
+                Name = "Reema",
+                salary = 50000
+            };
+            Employee emp2 = new Employee()
+            {
+                Id = 2,
+                Name = "Salma",
+                salary = 45000
+            };
+            Employee emp3 = new Employee()
+            {
+                Id = 3,
+                Name = "Sandhya",
+                salary = 35000
+            };
+            empList.Add(emp1);
+            empList.Add(emp2);
+            empList.Add(emp3);
+            foreach (Employee e in empList)
+            {
+                Console.WriteLine("{0} {1} {2} \n", e.Id, e.Name, e.salary);
+            }
+            Console.WriteLine("Total Number of Employees {0}", empList.Count);
+            Console.ReadLine();
+        }
+    }
+}
+
+
